@@ -110,7 +110,7 @@
       </div>
     </div>
     <div class="welcome-jumbo">
-      <img src="/img/bacon.jpg"/>
+      <img src="/img/bacon-burger.jpg"/>
       
     </div>
   </section>
