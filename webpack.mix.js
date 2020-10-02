@@ -13,6 +13,6 @@ const mix = require('laravel-mix');
 
 mix.sass('resources/sass/app.scss', 'public/css')
     .browserSync({
-        proxy: "http://localhost:8888/"
+        proxy: "http://localhost:8000/"
     });
 
