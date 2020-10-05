@@ -1,7 +1,7 @@
 
   .welcome-jumbo{
-  
-    max-width: calc(100vw - 350px);
+    transform: translate3d(300px, 0, 0);
+    max-width: calc(100vw - 300px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,36 +47,10 @@
     //   }
     // }
 
-  }
-  .welcome-jumbo-menu{
-    max-width: calc(100vw - 350px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
+  
+
     background: #EB3349;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    .status{
-      display: inline-block;
-      padding: 10px 15px;
-      font-size: .8rem;
-      font-weight: 700;
-      color: white;
-      background: black;
-      border-radius: 5px;
-      align-self: flex-start;
-      margin-bottom: 20px;
-    }
-    h1{
-      font-size: 4rem;
-      font-weight: 900;
-      align-self: flex-start;
-      color: white;
-      margin-bottom: 100px;
-      margin-left: 6rem;
-
-    }
   }
+   
