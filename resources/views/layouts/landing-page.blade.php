@@ -18,7 +18,7 @@
     <section id="app-layout">
     @include('includes.side-menu')
     <div class="welcome-jumbo">
-      <img src="/img/bacon-burger.jpg"/>
+      <img src="/img/mainpic.jpg"/>
       
     </div>
   </section>
