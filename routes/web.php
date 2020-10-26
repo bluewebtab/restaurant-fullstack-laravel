@@ -50,6 +50,7 @@ Route::get('/admin/reservations', 'admin\CustomersController@allreservations');
 //Admn Users
 Route::get('/admin/users', 'admin\UsersController@index');
 Route::get('/admin/users/create', 'admin\UsersController@create');
+Route::post('/admin/users', 'admin\UsersController@store');
 Route::get('/admin/users/{id}/edit', 'admin\UsersController@edit');
 
 
