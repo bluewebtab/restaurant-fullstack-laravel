@@ -40,19 +40,32 @@
                                         <th scope="col">Full Name</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Phone Number</th>
-                                        <th scope="col">Date Created</th>
+                                        <th scope="col">Date</th>
                                          
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>John Doe</td>
-                                        <td>john@gmail.com</td>
-                                        <td>(555) 555-5555</td>
-                                        <td>2/2/20</td>
-                                    </tr>
+                                    @foreach ($members as $member)
+                                        <tr>
+                                            <th scope="row">{{$member->id}}</th>
+                                            <td>{{$member->fname}} {{$member->lname}}</td>
+                                            <td>{{$member->email}}</td>
+                                            <td>{{$member->phone_number}}</td>
+                                            <td>{{date('m/d/y', strtotime($member->id))}}</td>
+                                            <td><a href="/admin/food-members/{{$member->id}}/edit"><i class="far fa-edit"></i></a></td>
+                                            <td>
+                                            <a href="#" onclick="event.preventDefault();
+                                            document.getElementById('delete-member-{{$member->id}}').submit();">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                            <form id="delete-member-{{$member->id}}" action="/admin/food-members/{{$member->id}}/delete" method="POST" style="display: none;">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
