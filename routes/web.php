@@ -30,7 +30,7 @@ Route::get('/offers', 'StaticPagesController@offers');
 
 Route::post('/offers', 'StaticPagesController@registerMember');
 
-Route::get('/offers/thank-you', 'StaticPagesController@offersThankYou');
+Route::get('/offers/thank-you', 'StaticPagesController@thankYou');
 
 
 

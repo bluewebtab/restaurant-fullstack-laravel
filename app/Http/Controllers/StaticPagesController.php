@@ -25,7 +25,7 @@ class StaticPagesController extends Controller
      public function registerMember(){
         request()->validate([
             'fname' => ['required', 'string'],
-            'description' => ['required', 'string'],
+            'lname' => ['required', 'string'],
             'email' => ['required', 'string'],
             'phone_number' => ['required', 'string']
 
@@ -41,7 +41,7 @@ class StaticPagesController extends Controller
 
         return redirect('/offers/thank-you');
      }
-     public function offersThankYou(){
+     public function thankYou(){
         return view('pages/thank-you');
      }
 
