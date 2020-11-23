@@ -24,6 +24,11 @@ Route::get('/about', 'StaticPagesController@about');
 
 Route::get('/reservations', 'StaticPagesController@reservations');
 
+Route::post('/reservations', 'StaticPagesController@saveReservation');
+
+Route::get('/reservations/thank-you', 'StaticPagesController@thankYou');
+
+
 Route::get('/contact', 'StaticPagesController@contact');
 
 Route::get('/offers', 'StaticPagesController@offers');
@@ -62,7 +67,8 @@ Route::get('/admin/members', 'admin\MemberController@index');
 Route::delete('/admin/members/{id}/delete', 'admin\MemberController@delete');
 
 //Admin Reservations
-Route::get('/admin/reservations', 'admin\CustomersController@allreservations');
+Route::get('/admin/reservations', 'admin\ReservationController@index');
+Route::delete('/admin/reservations/{id}/delete', 'admin\ReservationController@delete');
 
 
 //Admn Users
