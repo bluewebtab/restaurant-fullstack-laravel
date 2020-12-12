@@ -8,14 +8,13 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header">
-                <h2 class="pageheader-title">New Users </h2>
+                <h2 class="pageheader-title">Edit General Settings </h2>
                 <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
                 <div class="page-breadcrumb">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/admin" class="breadcrumb-link">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="/admin/users" class="breadcrumb-link">All Users</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">New User</li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit General Settings</li>
                         </ol>
                     </nav>
                 </div>
@@ -32,69 +31,82 @@
             <!-- ============================================================== -->
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <div class="card">
-                    <h5 class="card-header">Create a New User</h5>
+                    <h5 class="card-header">Edit General Settings</h5>
                     <div class="card-body">
-                        <form method="POST" action="/admin/users">
-                            @csrf                            
+                        <form method="POST" action="/admin/settings/general">
+                            @csrf           
+                            @method('PUT')                 
                             <div class="form-group">
-                                <label for="inputfirstname">First Name</label>
-                                <input id="inputfirstname" type="text" class="form-control form-control-lg @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}" required autocomplete="name" autofocus placeholder="First Name">
+                                <label for="inputtitle">Business Name</label>
+                                <input id="inputtitle" type="text" class="form-control form-control-lg @error('site_title') is-invalid @enderror" name="site_title" value="{{ old('site_title', $general_setting->site_title) }}" required autocomplete="site_title" autofocus placeholder="Add Site Title">
 
-                                @error('fname')
+                                @error('site_title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror                  
-                            </div>
+                            </div> 
                             <div class="form-group">
-                                <label for="inputlastname">Last Name</label>
-                                <input id="inputlasname" type="text" class="form-control form-control-lg @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="name" autofocus placeholder="Last Name">
+                                <label for="inputaddress1">Address 1</label>
+                                <input id="inputaddress1" type="text" class="form-control form-control-lg @error('address_1') is-invalid @enderror" name="address_1" value="{{ old('address_1', $general_setting->address_1) }}" required autocomplete="address_1" autofocus placeholder="Add Street Address">
 
-                                @error('name')
+                                @error('address_1')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror                            </div>
+                                @enderror                  
+                            </div> 
                             <div class="form-group">
-                                <label for="inputemail">Email</label>
-                                <input id="inputemail" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                                <label for="inputaddress2">Address 2</label>
+                                <input id="inputaddress2" type="text" class="form-control form-control-lg @error('address_2') is-invalid @enderror" name="address_2" value="{{ old('address_2', $general_setting->address_2) }}" autocomplete="address_2" autofocus placeholder="">
 
-                                @error('email')
+                                @error('address_2')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror                            </div>
+                                @enderror                  
+                            </div> 
                             <div class="form-group">
-                                <label for="inputpassword">Password</label>
-                                <input id="inputpassword" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" Placeholder="Password">
+                                <label for="inputcity">City</label>
+                                <input id="inputcity" type="text" class="form-control form-control-lg @error('city') is-invalid @enderror" name="city" value="{{ old('city', $general_setting->city) }}" required autocomplete="city" autofocus placeholder="">
 
-                                @error('password')
+                                @error('city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror                
-                            </div>
+                                @enderror                  
+                            </div> 
                             <div class="form-group">
-                                <label for="inputpassword">Confirm Password</label>
-                                <input id="inputpassword" type="password" class="form-control form-control-lg" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                                <label for="inputstate">State</label>
+                                <input id="inputstate" type="text" class="form-control form-control-lg @error('state') is-invalid @enderror" name="state" value="{{ old('state', $general_setting->state) }}" required autocomplete="state" autofocus placeholder="">
 
-                            </div>
+                                @error('state')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror                  
+                            </div> 
                             <div class="form-group">
-                                <label for="input-select">Role</label>
-                                <select name="role_id" class="form-control" id="inputrole">
-                                    @foreach ($roles as $role)
-                                <option value="{{$role->id}}" 
-                                        @if ($role->title == 'Admin')
-                                            selected
-                                        @endif 
-                                        >{{$role->title}}
-                                        </option>
-                                        
-                                    @endforeach
-                                </select>
-                            </div>
-                          
-                          
+                                <label for="inputzipcode">Zip Code</label>
+                                <input id="inputzipcode" type="text" class="form-control form-control-lg @error('zipcode') is-invalid @enderror" name="zipcode" value="{{ old('zipcode', $general_setting->zipcode) }}" required autocomplete="zipcode" autofocus placeholder="">
+
+                                @error('zipcode')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror                  
+                            </div> 
+                            <div class="form-group">
+                                <label for="inputphonenumber">Phone Number</label>
+                                <input id="inputphonenumber" type="text" class="form-control form-control-lg @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number', $general_setting->phone_number) }}" required autocomplete="phone_number" autofocus placeholder="">
+
+                                @error('phone_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror                  
+                            </div> 
+                              
                             <div class="row">
                                 <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
                                 </div>
