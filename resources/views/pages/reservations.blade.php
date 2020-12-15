@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('title')
+Reservations - {{$settings["general"]->site_title}}
+@endsection
+
+
 
 
 @section('content')
