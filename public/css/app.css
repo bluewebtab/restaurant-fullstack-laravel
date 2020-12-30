@@ -379,6 +379,44 @@ table {
   #menu-page {
     padding: 20px;
   }
+
+  #menu-page #food-preview {
+    width: 100%;
+    overflow: auto;
+    padding: 20px;
+  }
+
+  #menu-page #food-preview .food-slider .slide {
+    margin-bottom: 1rem;
+  }
+
+  #menu-page #food-preview .food-slider .sliding-system {
+    white-space: normal;
+    transform: translate3d(0%, 0, 0);
+  }
+
+  #menu-page #food-preview .button-rounded {
+    margin-bottom: 2rem;
+  }
+
+  #menu-page #food-preview .container .left-btn {
+    left: -20px;
+    display: none;
+  }
+
+  #menu-page #food-preview .container .right-btn {
+    right: -20px;
+    display: none;
+  }
+
+  #menu-page #food-preview h2 {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  #menu-page #food-preview .food-slider .slide {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -863,8 +901,17 @@ h2 {
 
   #food-preview {
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
     padding: 20px;
+  }
+
+  #food-preview .food-slider .slide {
+    margin-bottom: 1rem;
+  }
+
+  #food-preview .food-slider .sliding-system {
+    white-space: normal;
+    transform: translate3d(0%, 0, 0);
   }
 
   #food-preview .button-rounded {
@@ -873,10 +920,12 @@ h2 {
 
   #food-preview .container .left-btn {
     left: -20px;
+    display: none;
   }
 
   #food-preview .container .right-btn {
     right: -20px;
+    display: none;
   }
 
   #food-preview h2 {
