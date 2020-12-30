@@ -360,7 +360,7 @@ table {
 
 #menu-page #food-preview .food-slider .slide:hover .background {
   background: black;
-  transform: translate3d(0, -180px, 0);
+  transform: translate3d(0, -200px, 0);
 }
 
 #menu-page #food-preview .food-slider .slide .content {
@@ -750,7 +750,7 @@ body {
 #food-preview .food-slider .slide {
   width: 20%;
   position: relative;
-  height: 500px;
+  height: 550px;
   cursor: pointer;
   display: inline-block;
   white-space: normal;
