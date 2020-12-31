@@ -65,7 +65,7 @@ return [
         
         // Deployment is done and live
         'done' => [
-            'app:symlink_public_html'
+            //
         ],
         
         // Deployment succeeded.
@@ -114,11 +114,7 @@ return [
     'hosts' => [
         'ronnygutierrez.com' => [
             'deploy_path' => '/home/ronnjohi/source',
-            'user' => 'ronnjohi',
-            'strategy' => 'firstdeploy',
-            'port' => 21098, // Port provided by cPanel ssh
-            'http_user' => 'ronnjohi',
-            'writable_mode' => 'chmod' 
+            'user' => 'root',
         ],
     ],
 
@@ -149,7 +145,7 @@ return [
     */
 
     'include' => [
-        base_path('deployer_task.php')
+        //
     ],
 
     /*
