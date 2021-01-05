@@ -65,9 +65,12 @@
                         </label>
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                    <br />
+                    <a class="footer-link">(Use Email: jane@gmail.com | Password: 12345678)</a>
                 </form>
             </div>
             <div class="card-footer bg-white p-0  ">
+                
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="#" class="footer-link">Create An Account</a></div>
                 <div class="card-footer-item card-footer-item-bordered">
